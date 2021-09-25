@@ -1,4 +1,9 @@
----
+kubectl:
+  image:
+    repository: arti.dev.cray.com/csm-docker-stable-local/docker-kubectl
+    tag: 0.3.0
+    pullPolicy: IfNotPresent
+
 ceph-csi-cephfs:
 
   nameOverride: ceph-csi-cephfs
@@ -88,6 +93,8 @@ ceph-csi-cephfs:
 
     plugin:
       image:
+        #repository: artifactory.algol60.net/csm-docker/stable/quay.io/cephcsi/cephcsi
+        # XXX quay.io/cephcsi/cephcsi:v3.4.0 has 4 critical (of 8) vulnerabilities
         repository: quay.io/cephcsi/cephcsi
         tag: v3.4.0
         pullPolicy: IfNotPresent
