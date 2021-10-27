@@ -81,15 +81,15 @@ ceph-csi-cephfs:
 
     registrar:
       image:
-        repository: quay.io/k8scsi/csi-node-driver-registrar
-        tag: v2.0.1
+        repository: k8s.gcr.io/sig-storage/csi-node-driver-registrar
+        tag: v2.2.0
         pullPolicy: IfNotPresent
       resources: {}
 
     plugin:
       image:
         repository: quay.io/cephcsi/cephcsi
-        tag: v3.3.1
+        tag: v3.4.0
         pullPolicy: IfNotPresent
       resources: {}
 
@@ -151,8 +151,8 @@ ceph-csi-cephfs:
 
     provisioner:
       image:
-        repository: quay.io/k8scsi/csi-provisioner
-        tag: v2.0.4
+        repository: k8s.gcr.io/sig-storage/csi-provisioner
+        tag: v2.2.2
         pullPolicy: IfNotPresent
       resources: {}
 
@@ -160,8 +160,8 @@ ceph-csi-cephfs:
       name: attacher
       enabled: true
       image:
-        repository: quay.io/k8scsi/csi-attacher
-        tag: v3.0.2
+        repository: k8s.gcr.io/sig-storage/csi-attacher
+        tag: v3.2.1
         pullPolicy: IfNotPresent
       resources: {}
 
@@ -169,15 +169,15 @@ ceph-csi-cephfs:
       name: resizer
       enabled: true
       image:
-        repository: quay.io/k8scsi/csi-resizer
-        tag: v1.0.1
+        repository: k8s.gcr.io/sig-storage/csi-resizer
+        tag: v1.2.0
         pullPolicy: IfNotPresent
       resources: {}
 
     snapshotter:
       image:
-        repository: quay.io/k8scsi/csi-snapshotter
-        tag: v3.0.2
+        repository: k8s.gcr.io/sig-storage/csi-snapshotter
+        tag: v4.1.1
         pullPolicy: IfNotPresent
       resources: {}
 
