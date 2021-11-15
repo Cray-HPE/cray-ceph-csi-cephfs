@@ -88,14 +88,3 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccounts.provisioner.name }}
 {{- end -}}
 {{- end -}}
-
-{{/*
-Get an image prefix
-*/}}
-{{- define "cray-ceph-csi-cephfs.image-prefix" -}}
-{{- if .Values.imagesHost -}}
-{{- printf "%s/" .Values.imagesHost -}}
-{{- else -}}
-{{- printf "" -}}
-{{- end -}}
-{{- end -}}
