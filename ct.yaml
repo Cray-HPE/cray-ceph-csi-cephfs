@@ -1,4 +1,4 @@
 chart-dirs:
   - kubernetes
 chart-repos:
-  - https://ceph.github.io/csi-charts
+  - csi-charts=https://ceph.github.io/csi-charts

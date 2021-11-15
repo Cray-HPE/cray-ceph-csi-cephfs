@@ -93,8 +93,8 @@ ceph-csi-cephfs:
 
     plugin:
       image:
-        #repository: artifactory.algol60.net/csm-docker/stable/quay.io/cephcsi/cephcsi
         # XXX quay.io/cephcsi/cephcsi:v3.4.0 has 4 critical (of 8) vulnerabilities
+        # TODO Add rebuild to container-images repo for artifactory.algol60.net/csm-docker/stable/quay.io/cephcsi/cephcsi:v3.4.0
         repository: quay.io/cephcsi/cephcsi
         tag: v3.4.0
         pullPolicy: IfNotPresent
