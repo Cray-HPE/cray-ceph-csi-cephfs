@@ -3,12 +3,12 @@ name: cray-ceph-csi-cephfs
 version: 3.4.0
 description: Container Storage Interface (CSI) driver, provisioner, snapshotter and attacher for Ceph cephfs
 keywords:
-- ceph
-- cephfs
-- ceph-csi
+  - ceph
+  - cephfs
+  - ceph-csi
 home: https://github.com/Cray-HPE/cray-ceph-csi-cephfs
 sources:
-- https://github.com/ceph/ceph-csi/tree/v3.4.0/charts/ceph-csi-cephfs
+  - https://github.com/ceph/ceph-csi/tree/v3.4.0/charts/ceph-csi-cephfs
 dependencies:
   - name: ceph-csi-cephfs
     version: 3.4.0
