@@ -120,7 +120,11 @@ ceph-csi-cephfs:
     replicaCount: 3
     # Timeout for waiting for creation or deletion of a volume
     timeout: 60s
-
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 50%
+  
     # set user created priorityclassName for csi provisioner pods. default is
     # system-cluster-critical which is less priority than system-node-critical
     priorityClassName: csm-high-priority-service
