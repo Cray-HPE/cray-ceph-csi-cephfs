@@ -11,18 +11,18 @@ ceph-csi-cephfs:
 
   rbac:
     # Specifies whether RBAC resources should be created
-    create: false
+    create: true
 
   serviceAccounts:
     nodeplugin:
       # Specifies whether a ServiceAccount should be created
-      create: false
+      create: true
       # The name of the ServiceAccount to use.
       # If not set and create is true, a name is generated using the fullname
       name: "cray-node-plugin-serviceaccount"
     provisioner:
       # Specifies whether a ServiceAccount should be created
-      create: false
+      create: true
       # The name of the ServiceAccount to use.
       # If not set and create is true, a name is generated using the fullname
       name: "cray-csi-serviceaccount"
