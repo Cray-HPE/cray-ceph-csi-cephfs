@@ -1,6 +1,6 @@
 apiVersion: v2
 name: cray-ceph-csi-cephfs
-version: 3.5.1-1
+version: 3.6.2
 description: Container Storage Interface (CSI) driver, provisioner, snapshotter and attacher for Ceph cephfs
 keywords:
   - ceph
@@ -11,9 +11,9 @@ sources:
   - https://github.com/ceph/ceph-csi/tree/v3.5.1/charts/ceph-csi-cephfs
 dependencies:
   - name: ceph-csi-cephfs
-    version: 3.5.1
+    version: 3.6.2
     repository: https://ceph.github.io/csi-charts
 maintainers:
   - name: bklei
 icon: https://raw.githubusercontent.com/ceph/ceph-csi/v3.5.1/assets/ceph-logo.png
-appVersion: 3.5.1
+appVersion: 3.6.2
