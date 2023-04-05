@@ -124,7 +124,7 @@ ceph-csi-cephfs:
       type: RollingUpdate
       rollingUpdate:
         maxUnavailable: 50%
-  
+
     # set user created priorityclassName for csi provisioner pods. default is
     # system-cluster-critical which is less priority than system-node-critical
     priorityClassName: csm-high-priority-service
