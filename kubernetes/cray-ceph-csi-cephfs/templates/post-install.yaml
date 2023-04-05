@@ -29,10 +29,18 @@ spec:
           image: {{ .Values.kubectl.image.repository }}:{{ .Values.kubectl.image.tag }}
           imagePullPolicy: {{ .Values.kubectl.image.pullPolicy }}
           command:
-            - bin/sh
-            - -c
+            - '/bin/sh'
+          args:
+            - "-c"
             - |
-              kubectl apply -f /apps/storage_classes/sc-cephfs.yaml
+              cp /apps/storage_classes/sc-cephfs.yaml /tmp/sc-cephfs.yaml
+              if ! grep -q provisioner-secret-name /tmp/sc-cephfs.yaml; then
+                echo "Adding ceph secret parameters to cephfs storage class."
+                sed -i '/parameters:/a \   csi.storage.k8s.io/provisioner-secret-name: csi-cephfs-secret\n   csi.storage.k8s.io/provisioner-secret-namespace: default\n   csi.storage.k8s.io/controller-expand-secret-name: csi-cephfs-secret\n   csi.storage.k8s.io/controller-expand-secret-namespace: default\n   csi.storage.k8s.io/node-stage-secret-name: csi-cephfs-secret\n   csi.storage.k8s.io/node-stage-secret-namespace: default' /tmp/sc-cephfs.yaml
+              else
+                echo "cephfs storage class contains provisioner-secret-name -- proceeding."
+              fi
+              kubectl apply -f /tmp/sc-cephfs.yaml
           volumeMounts:
             - name: cephfs-csi-sc-vol
               mountPath: /apps/storage_classes/sc-cephfs.yaml
