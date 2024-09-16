@@ -1,6 +1,6 @@
 apiVersion: v2
 name: cray-ceph-csi-cephfs
-version: 3.6.3
+version: 3.6.3-1
 description: Container Storage Interface (CSI) driver, provisioner, snapshotter and attacher for Ceph cephfs
 keywords:
   - ceph
